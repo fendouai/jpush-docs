@@ -1,4 +1,5 @@
 # JPush API Python Client
+<<<<<<< HEAD
 test 
 
 14:3329
@@ -6,6 +7,9 @@ test
 2016年9月22日
 
 test 3:11
+=======
+
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 ## 概述
 这是 JPush REST API 的 Python 版本封装开发包，是由极光推送官方提供的，一般支持最新的 API 功能。
 
@@ -13,9 +17,13 @@ test 3:11
 
 ## 兼容版本
 +  Python 2.7
+<<<<<<< HEAD
 +  Python 3 ，可以运行，建议继续使用 jpush 3.1.2 ，经过完整测试后会发布新版本。
 
 change remote and the server doc
+=======
++  Python 3
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 
 ## 环境配置
 

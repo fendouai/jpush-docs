@@ -2,7 +2,11 @@
 
 以下列表里的 ErrorCode 有可能在 SDK 的调用过程中出现。供参考理解其含义。
 
+<<<<<<< HEAD
 #### JMessage iOS
+=======
+### JMessage iOS
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 
 只会出现在 iOS SDK 里的错误码。
 

@@ -833,7 +833,11 @@ r1.6.0 版本开始。
 
 ### 教程与代码示例
 
+<<<<<<< HEAD
 请参考文档：[自定义通知栏样式教程](/client/android_tutorials/#_11)
+=======
+请参考文档：[自定义通知栏样式教程](android_senior/#_8)
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 
 ### API - 设置默认通知栏样式构建类
 	public static void setDefaultPushNotificationBuilder(BasicPushNotificationBuilder builder)

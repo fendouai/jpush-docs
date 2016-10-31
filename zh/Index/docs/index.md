@@ -36,6 +36,10 @@
         <li><a href="/jmessage/client/jmessage_ios_guide/">iOS SDK 集成指南</a></li>
         <li><a href="/jmessage/client/im_sdk_js/">WEB SDK 开发文档</a></li>
         <li><a href="/jmessage/server/rest_api_im/">IM REST API</a></li>
+<<<<<<< HEAD
+=======
+        <li><a href="https://docs.jiguang.cn/jmessage/resources/">IM SDK 下载</a></li>
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
         <div style="clear:both;"></div>
     </ul>
 </div>

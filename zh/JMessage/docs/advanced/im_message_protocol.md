@@ -1,13 +1,23 @@
+<<<<<<< HEAD
 # IM 消息协议
 
 ### Summary 概述
+=======
+# 消息协议
+
+### 概述
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 
 JMessage 对于不同的消息类型，有一个 JSON 格式的消息协议。这个业务级别的协议，由发送者编码，由接收者解码，并处理接收到的消息。
 
 面向开发者接口提供的发送消息接口，也需要遵循此文档定义来组装消息，以发往客户端。
 
 
+<<<<<<< HEAD
 ### Protocol 协议定义
+=======
+### 协议定义
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 
 + version Number 
 	+ 必须。
@@ -50,7 +60,11 @@ JMessage 对于不同的消息类型，有一个 JSON 格式的消息协议。�
 	+ 必须。
 	+ 消息实体。
 
+<<<<<<< HEAD
 ### Message Body 消息体定义
+=======
+### 消息体定义
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 
 根据 msg_type 的不同，msg_body 里会有以下字段信息。
 
@@ -112,7 +126,11 @@ msg_type = custom
 开发者自定义字段。JsonObject。
 
 
+<<<<<<< HEAD
 ### Examples 消息示例
+=======
+### 消息示例
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 
 ```
 {
@@ -131,6 +149,7 @@ msg_type = custom
 }
 ```
 
+<<<<<<< HEAD
 ### See Also 相关文档
 
 + [极光IM 指南](../guideline/jmessage_guide/)
@@ -138,5 +157,13 @@ msg_type = custom
 + [IM SDK for iOS](../client/im_sdk_ios/)
 + [IM REST API](../server/rest_api_im/)
 + [IM 业务对象](im_objects/)
+=======
+### 相关文档
+
++ [JMessage 产品简介](../guideline/jmessage_guide/)
++ [IM REST API](https://docs.jiguang.cn/jmessage/server/rest_api_im/)
++ [资源下载](https://docs.jiguang.cn/jmessage/resources/)
+
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 
 

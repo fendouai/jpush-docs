@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 
 renew
 >>>>>>> renew
+=======
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 {
     // Folders to use for output
     // Caution: it overrides the value from the command line

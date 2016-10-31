@@ -321,7 +321,11 @@ iOS 设备收到一条推送（APNs），用户点击推送通知打开应用时
 * 如果 App 状态为未运行，此函数将被调用，如果launchOptions包含UIApplicationLaunchOptionsRemoteNotificationKey表示用户点击apn 通知导致app被启动运行；如果不含有对应键值则表示 App 不是因点击apn而被启动，可能为直接点击icon被启动或其他。
 
 ```
+<<<<<<< HEAD
 - (BOOL)application:(UIApplication \*)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions; 
+=======
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions; 
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 // apn 内容获取：
 NSDictionary *remoteNotification = [launchOptions objectForKey: UIApplicationLaunchOptionsRemoteNotificationKey]
 ```
@@ -339,6 +343,7 @@ NSDictionary *remoteNotification = [launchOptions objectForKey: UIApplicationLau
 * 基于iOS 10及以上的系统版本，原[application: didReceiveRemoteNotification:]将会被系统废弃，  
 由新增UserNotifications Framework中的[UNUserNotificationCenterDelegate willPresentNotification:withCompletionHandler:]  
 或者[UNUserNotificationCenterDelegate didReceiveNotificationResponse:withCompletionHandler:]方法替代。  
+<<<<<<< HEAD
 在2.1.9版本以后可实现SDK封装的JPUSHRegisterDelegate协议方法，适配iOS10新增的delegate协议方法。  
 即以下两个方法：
 
@@ -348,6 +353,17 @@ NSDictionary *remoteNotification = [launchOptions objectForKey: UIApplicationLau
 // APNs内容为userInfo
 
 - (void)jpushNotificationCenter:(UNUserNotificationCenter )center didReceiveNotificationResponse:(UNNotificationResponse )response withCompletionHandler:(void (^)())completionHandler; 
+=======
+在2.1.9版本及以上可实现SDK封装的JPUSHRegisterDelegate协议方法，适配iOS10新增的delegate协议方法。  
+即以下两个方法：
+
+```
+- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(NSInteger))completionHandler; 
+// NSDictionary * userInfo = notification.request.content.userInfo; 
+// APNs内容为userInfo
+
+- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler; 
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 // NSDictionary * userInfo = response.notification.request.content.userInfo; 
 // APNs内容为userInfo
 ```
@@ -372,7 +388,11 @@ NSDictionary *remoteNotification = [launchOptions objectForKey: UIApplicationLau
 }
 
 //iOS 7 Remote Notification
+<<<<<<< HEAD
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:  (NSDictionary *)userInfo fetchCompletionHandler:(void (^)   (UIBackgroundFetchResult))completionHandler {
+=======
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:  (NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
      
   NSLog(@"this is iOS7 Remote Notification");
          
@@ -384,7 +404,11 @@ NSDictionary *remoteNotification = [launchOptions objectForKey: UIApplicationLau
 #pragma mark- JPUSHRegisterDelegate // 2.1.9版新增JPUSHRegisterDelegate,需实现以下两个方法
 
 // iOS 10 Support
+<<<<<<< HEAD
 - (void)jpushNotificationCenter:(UNUserNotificationCenter *)center  willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)  (NSInteger))completionHandler {
+=======
+- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center  willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(NSInteger))completionHandler {
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
   // Required
   NSDictionary * userInfo = notification.request.content.userInfo;
   if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
@@ -599,6 +623,7 @@ iOS 设备收到一条本地通知，用户点击通知打开应用时，应用�
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification;
 // 本地通知为notification
 ```
+<<<<<<< HEAD
 + 在iOS 10以上上述方法将被系统废弃，由新增UserNotifications Framework中的-[UNUserNotificationCenterDelegate willPresentNotification:withCompletionHandler:] 或者 -[UNUserNotificationCenterDelegate didReceiveNotificationResponse:withCompletionHandler:]方法替代。为此，SDK封装了JPUSHRegisterDelegate协议，只需实现相应的协议方法即可兼容系统新的delegate方法，实现新的回调方式。与上述远程推送新回调方法一致，如下实现代码：
 
 ```
@@ -627,6 +652,20 @@ iOS 设备收到一条本地通知，用户点击通知打开应用时，应用�
   		}
   		completionHandler();
 	}
+=======
++ 在iOS 10以上上述方法将被系统废弃，由新增UserNotifications Framework中的-[UNUserNotificationCenterDelegate willPresentNotification:withCompletionHandler:] 或者 -[UNUserNotificationCenterDelegate didReceiveNotificationResponse:withCompletionHandler:]方法替代。为此，SDK封装了JPUSHRegisterDelegate协议，只需实现相应的协议方法即可适配iOS10新增的delegate方法，与上述远程推送新回调方法一致，也即是如下方法：
+
+```
+- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^) (NSInteger))completionHandler; 
+   // if (![notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) { 
+   // 本地通知为notification 
+   // }
+
+- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler: (void (^)())completionHandler; 
+  // if (![response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) { 
+  // 本地通知为response.notification 
+  // }
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 	
 ```
 
@@ -644,7 +683,11 @@ API 用于注册或更新推送（支持iOS10，并兼容iOS10以下版本）
 + (void)addNotification:(JPushNotificationRequest *)request;
 ```
 #### 参数说明
+<<<<<<< HEAD
 + request [JPushNotificationRequest](../client/ios_tutorials/#_JPushNotificationRequest)实体类型，可传入推送的属性
+=======
++ request [JPushNotificationRequest]实体类型，可传入推送的属性
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 
 #### 调用说明
 request中传入已有推送的request.requestIdentifier即更新已有的推送，否则为注册新推送。
@@ -660,16 +703,27 @@ request中传入已有推送的request.requestIdentifier即更新已有的推送
   content.badge = @1;
   content.categoryIdentifier = @"Custom Category Name";
   
+<<<<<<< HEAD
   // iOS 10 以上支持
   //5s后提醒
   JPushNotificationTrigger *trigger1 = [[JPushNotificationTrigger alloc] init];
   trigger1.timeInterval = 5;
   //每小时重复 1 次
+=======
+  // 5s后提醒 iOS 10 以上支持
+  JPushNotificationTrigger *trigger1 = [[JPushNotificationTrigger alloc] init];
+  trigger1.timeInterval = 5;
+  //每小时重复 1 次 iOS 10 以上支持
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
   JPushNotificationTrigger *trigger2 = [[JPushNotificationTrigger alloc] init];
   trigger2.timeInterval = 3600;
   trigger2.repeat = YES;
   
+<<<<<<< HEAD
   //每周一早上8：00提醒
+=======
+  //每周一早上8：00提醒，iOS10以上支持
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
   NSDateComponents *components = [[NSDateComponents alloc] init];
   components.weekday = 2;
   components.hour = 8;
@@ -678,20 +732,37 @@ request中传入已有推送的request.requestIdentifier即更新已有的推送
   trigger3.repeat = YES;
   
   //#import <CoreLocation/CoreLocation.h>
+<<<<<<< HEAD
   //一到某地点提醒
+=======
+  //一到某地点提醒，iOS8以上支持
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
   CLRegion *region = [[CLRegion alloc] initCircularRegionWithCenter:CLLocationCoordinate2DMake(0, 0) radius:0 identifier:@"test"];
   JPushNotificationTrigger *trigger4 = [[JPushNotificationTrigger alloc] init];
   trigger4.region = region;
   
+<<<<<<< HEAD
   // iOS 10 以下支持
   //5s后提醒
   JPushNotificationTrigger *trigger5 = [[JPushNotificationTrigger alloc] init];
   trigger5.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
   
+=======
+  //5s后提醒，iOS10以下支持
+  JPushNotificationTrigger *trigger5 = [[JPushNotificationTrigger alloc] init];
+  trigger5.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
+
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
   JPushNotificationRequest *request = [[JPushNotificationRequest alloc] init];
   request.requestIdentifier = @"sampleRequest";
   request.content = content;
   request.trigger = trigger1;//trigger2;//trigger3;//trigger4;//trigger5;
+<<<<<<< HEAD
+=======
+  request.completionHandler = ^(id result) {
+    NSLog(@"结果返回：%@", result);
+  };
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
   [JPUSHService addNotification:request];
 }
 ```
@@ -710,11 +781,18 @@ API 用于移除待推送或已在通知中心显示的推送（支持iOS10，�
 + (void)removeNotification:(JPushNotificationIdentifier *)identifier;
 ```
 #### 参数说明
+<<<<<<< HEAD
 + identifier [JPushNotificationIdentifier](../client/ios_tutorials/#_ JPushNotificationIdentifier)实体类型
 
 #### 调用说明
 - 通过identifier来传入需要移除的推送，其中通过identifier.identifiers传入需要移除的推送标识，传入nil或空数组即移除所有待推送或已在通知中心显示的推送，通过identifier.delivered传入待推送或已在通知中心显示的标志，@(YES)为已在通知中心显示的，@(NO)为待推送的。
 - iOS10以下系统还可以通过identifier.notificationObj传入特定推送对象来移除此推送。
+=======
++ identifier [JPushNotificationIdentifier]实体类型
+
+#### 调用说明
++ iOS10以上identifier设置为nil，则移除所有在通知中心显示推送和待推送请求，也可以通过设置identifier.delivered和identifier.identifiers来移除相应在通知中心显示推送或待推送请求，identifier.identifiers如果设置为nil或空数组则移除相应标志下所有在通知中心显示推送或待推送请求；iOS10以下identifier设置为nil，则移除所有推送，identifier.delivered属性无效，另外可以通过identifier.notificationObj传入特定推送对象来移除此推送。
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 
 #### 代码示例
 
@@ -722,9 +800,26 @@ API 用于移除待推送或已在通知中心显示的推送（支持iOS10，�
 - (void)testRemoveNotification {
   JPushNotificationIdentifier *identifier = [[JPushNotificationIdentifier alloc] init];
   identifier.identifiers = @[@"sampleRequest"];
+<<<<<<< HEAD
   identifier.delivered = @(YES);  // iOS 10 以上支持
   [JPUSHService removeNotification:identifier];
 }
+=======
+  identifier.delivered = YES;  //iOS10以上有效，等于YES则在通知中心显示的里面移除，等于NO则为在待推送的里面移除；iOS10以下无效
+  [JPUSHService removeNotification:identifier];
+}
+
+
+- (void)testRemoveAllNotification {
+  [JPUSHService removeNotification:nil];  // iOS10以下移除所有推送；iOS10以上移除所有在通知中心显示推送和待推送请求
+
+//  //iOS10以上支持
+//  JPushNotificationIdentifier *identifier = [[JPushNotificationIdentifier alloc] init];
+//  identifier.identifiers = nil;
+//  identifier.delivered = YES;  //等于YES则移除所有在通知中心显示的，等于NO则为移除所有待推送的
+//  [JPUSHService removeNotification:identifier];
+}
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 ```
 
 ### Method  FindNotification
@@ -741,11 +836,19 @@ API 用于查找推送（支持iOS10，并兼容iOS10以下版本）
 + (void)findNotification:(JPushNotificationIdentifier *)identifier;
 ```
 #### 参数说明
+<<<<<<< HEAD
 + identifier [JPushNotificationIdentifier](ios_tutorials/#_ JPushNotificationIdentifier)实体类型
 
 #### 调用说明
 - 通过identifier来传入需要查找的推送，其中通过identifier.identifiers传入需要查找的推送标识，传入nil或空数组即查找所有待推送或已在通知中心显示的推送，通过identifier.delivered传入待推送或已在通知中心显示的标志，@(YES)为已在通知中心显示的，@(NO)为待推送的。
 - 须要设置identifier.findCompletionHandler才能得到查找的结果，通过(NSArray *oResults, NSArray *nResults)返回推送对象数组，iOS10以下为同步查找返回结果oResults数组（包含UILocalNotification类型元素），此时nResults为空，iOS10以上为异步查找返回结果nResults数组（包含UNNotificationRequest类型元素），此时oResults为空。
+=======
++ identifier [JPushNotificationIdentifier]实体类型
+
+#### 调用说明
+- iOS10以上可以通过设置identifier.delivered和identifier.identifiers来查找相应在通知中心显示推送或待推送请求，identifier.identifiers如果设置为nil或空数组则返回相应标志下所有在通知中心显示推送或待推送请求；iOS10以下identifier.delivered属性无效，identifier.identifiers如果设置nil或空数组则返回所有推送。
+- 须要设置identifier.findCompletionHandler回调才能得到查找结果，通过(NSArray *results)返回相应对象数组。
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 
 #### 代码示例
 
@@ -753,11 +856,28 @@ API 用于查找推送（支持iOS10，并兼容iOS10以下版本）
 - (void)testFindNotification {
   JPushNotificationIdentifier *identifier = [[JPushNotificationIdentifier alloc] init];
   identifier.identifiers = @[@"sampleRequest"];
+<<<<<<< HEAD
   identifier.delivered = @(YES);
   identifier.findCompletionHandler = ^(NSArray *oResults, NSArray *nResults) {
     NSLog(@"iOS10以下返回结果为：%@", oResults);
     NSLog(@"iOS10以上返回结果为：%@", nResults);
   };
+=======
+  identifier.delivered = YES;  //iOS10以上有效，等于YES则在通知中心显示的里面查找，等于NO则在待推送的里面查找；iOS10以下无效
+  identifier.findCompletionHandler = ^(NSArray *results) {
+  NSLog(@"返回结果为：%@", results); // iOS10以下返回UILocalNotification对象数组，iOS10以上根据delivered传入值返回UNNotification或UNNotificationRequest对象数组
+};
+  [JPUSHService findNotification:identifier];
+}
+
+- (void)testFindAllNotification {
+  JPushNotificationIdentifier *identifier = [[JPushNotificationIdentifier alloc] init];
+  identifier.identifiers = nil;
+  identifier.delivered = YES;  //iOS10以上有效，等于YES则查找所有在通知中心显示的，等于NO则为查找所有待推送的；iOS10以下无效
+  identifier.findCompletionHandler = ^(NSArray *results) {
+  NSLog(@"返回结果为：%@", results); // iOS10以下返回UILocalNotification对象数组，iOS10以上根据delivered传入值返回UNNotification或UNNotificationRequest对象数组
+};
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
   [JPUSHService findNotification:identifier];
 }
 ```
@@ -1111,13 +1231,19 @@ CLLocation对象需要开发者自己调用苹果的地理位置信息API获取�
 Build Phases中Link Binary With Libraries添加CoreLocation.framework
 应用的plist增加NSLocationAlwaysUsageDescription或NSLocationWhenInUseUsageDescription字段，内容为是否允许alert的内容
  
+<<<<<<< HEAD
 .h
+=======
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 #import <CoreLocation/CoreLocation.h>
 @interface xxx : UIViewController<CLLocationManagerDelegate>
 @property(nonatomic, strong) CLLocationManager *currentLoaction;
  
+<<<<<<< HEAD
 .m
  
+=======
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 - (void)viewDidLoad {
   //注册LocationManager
   _currentLoaction = [[CLLocationManager alloc] init];

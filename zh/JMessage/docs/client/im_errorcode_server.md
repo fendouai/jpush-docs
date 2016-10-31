@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 ## IM SDK ErrorCode 定义
 
 #### Server Error 
+=======
+# IM SDK ErrorCode 定义
+
+### Server Error 
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 
 JMessage 服务器端报的错误码。有可能出现在各平台的 SDK 里。
 

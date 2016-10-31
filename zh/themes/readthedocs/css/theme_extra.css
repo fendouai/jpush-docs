@@ -543,7 +543,15 @@ code.cs, code.c {
   width: 500px;
   float: left;
   clear:right;
+<<<<<<< HEAD
   margin-bottom:40px;
+=======
+  margin-top:20px;
+}
+
+#download-right-first{
+  margin-top:40px;
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 }
 
 .download-left .download-image{
@@ -553,16 +561,49 @@ code.cs, code.c {
   max-width: 103px;
   max-height: 80px;
 }
+<<<<<<< HEAD
 .download-title p{
   font-size: 16px;
   color: #1b75bb;
   margin-top: 16px;
+=======
+
+.download-left .download-image-first{
+  margin-left: 24px;
+  margin-right: 24px;
+  margin-top: 44px;
+  max-width: 103px;
+  max-height: 80px;
+}
+
+#release-title{
+  float:left;
+  font-size: 16px;
+  color: #1b75bb;
+  margin-bottom: 18px;
+}
+
+#release-version,#release-time{
+  margin-left: 20px;
+  margin-top: 4px;
+  font-size: 12px;
+  color: #666666;
+  float:left;
+}
+
+.download-info{
+  margin-bottom: 22px;
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 }
 
 .download-info p{
   font-size: 14px;
   color: #666666;
   margin-top: 6px;
+<<<<<<< HEAD
+=======
+  clear: both;
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 }
 
 
@@ -580,10 +621,16 @@ code.cs, code.c {
   list-style-type: disc;
   color: #666666;
   font-size: 12px;
+<<<<<<< HEAD
   margin-right: 5px;
   float: left;
   min-width: 160px;
   margin-left: 15px;
+=======
+  margin-right: 50px;
+  float: left;
+
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 }
 
 .download .download-info-ul li a{
@@ -594,18 +641,32 @@ code.cs, code.c {
 .download-right .download-icon{
   width: 98px;
   height: 30px;
+<<<<<<< HEAD
+=======
+  margin-top: 5px;
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
   border-style: solid;
   border-color: #b5b5b5;
   border-width: 1px;
   text-align: center;
+<<<<<<< HEAD
   cursor:pointer;
+=======
+  vertical-align: middle;
+  cursor:pointer;
+  margin-bottom: 40px;
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 }
 
 .download-icon a{
   font-size: 14px;
   color: #666666;
+<<<<<<< HEAD
 
 
+=======
+  vertical-align: middle;
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 }
 
 .developer{

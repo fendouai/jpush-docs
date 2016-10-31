@@ -1,14 +1,23 @@
 # JPush API client library for CSharp
+<<<<<<< HEAD
 14:4646
 星期四
 2016年9月22日
 test 10:35
+=======
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 
 ## 概述
 这是 JPush REST API 的 C# 版本封装开发包，是由极光推送官方提供的，一般支持最新的 API 功能。
 
 对应的 REST API 文档：<http://docs.jpush.io/server/rest_api_v3_push/>
 
+<<<<<<< HEAD
+=======
+## 支持版本
+Microsoft. NET Framework 4.0 （包括）以上版本
+
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 ## 环境配置
 在 [jpush-api-csharp-client](https://github.com/jpush/jpush-api-csharp-client) 项目根目录可以下载下面的两个文件。
 
@@ -16,6 +25,14 @@ test 10:35
 
 *   在项目引用中添加： cn.jpush.api.dll
 
+<<<<<<< HEAD
+=======
+在线方式配置：
+
+*   在项目->引用->管理 NuGet 程序包中搜索 cn.jpush.api
+*   NuGet 包管理工具会下载 jpush-api-csharp-client 和 Newtonsoft 依赖。
+
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 ## Push API v3
 
 向某单个设备或者某设备列表推送一条通知或者消息
@@ -44,7 +61,11 @@ catch (APIRequestException e)
     Console.WriteLine("Error response from JPush server. Should review and fix it. ");
     Console.WriteLine("HTTP Status: " + e.Status);
     Console.WriteLine("Error Code: " + e.ErrorCode);
+<<<<<<< HEAD
     Console.WriteLine("Error Message: " + e.ErrorCode);
+=======
+    Console.WriteLine("Error Message: " + e.ErrorMessage);
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 }
 catch (APIConnectionException e)
 {
@@ -156,7 +177,11 @@ catch (APIRequestException e)
     Console.WriteLine("Error response from JPush server. Should review and fix it.");
     Console.WriteLine("HTTP Status: " + e.Status);
     Console.WriteLine("Error Code: " + e.ErrorCode);
+<<<<<<< HEAD
     Console.WriteLine("Error Message: " + e.ErrorCode);
+=======
+    Console.WriteLine("Error Message: " + e.ErrorMessage);
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 }
 catch (APIConnectionException e)
 {
@@ -183,7 +208,11 @@ catch (APIRequestException e)
     Console.WriteLine("Error response from JPush server. Should review and fix it.");
     Console.WriteLine("HTTP Status: " + e.Status);
     Console.WriteLine("Error Code: " + e.ErrorCode);
+<<<<<<< HEAD
     Console.WriteLine("Error Message: " + e.ErrorCode);
+=======
+    Console.WriteLine("Error Message: " + e.ErrorMessage);
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 }
 catch (APIConnectionException e)
 {
@@ -213,7 +242,11 @@ catch (APIRequestException e)
     Console.WriteLine("Error response from JPush server. Should review and fix it.");
     Console.WriteLine("HTTP Status: " + e.Status);
     Console.WriteLine("Error Code: " + e.ErrorCode);
+<<<<<<< HEAD
     Console.WriteLine("Error Message: " + e.ErrorCode);
+=======
+    Console.WriteLine("Error Message: " + e.ErrorMessage);
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 }
 catch (APIConnectionException e)
 {
@@ -243,4 +276,8 @@ Device API 状态码 参考文档：<http://docs.jpush.io/server/rest_api_v3_dev
 
 Push Schedule API 状态码 参考文档：<http://docs.jpush.io/server/rest_api_push_schedule/>　
 
+<<<<<<< HEAD
 [Release页面](https://github.com/jpush/jpush-api-csharp-client/releases/) 有详细的版本发布记录与下载。
+=======
+[Release页面](https://github.com/jpush/jpush-api-csharp-client/releases/) 有详细的版本发布记录与下载。
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2

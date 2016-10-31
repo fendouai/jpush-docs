@@ -6,6 +6,7 @@
 <ul>
 <li>
 <div class="download-left">
+<<<<<<< HEAD
 <div class="download-image">
 <img src="../image/resource_android.png">
 </div>
@@ -13,6 +14,15 @@
 <div class="download-right">
 <div class="download-title">
 <p>Android SDK下载</p>
+=======
+<div class="download-image  download-image-first">
+<img src="../image/resource_android.png">
+</div>
+</div>
+<div class="download-right"  id="download-right-first">
+<div class="download-title">
+<p id="release-title">Android SDK下载</p>
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 </div>
 <div class="download-info">
 <p>请参考如下文档来集成SDK：</p>
@@ -40,7 +50,11 @@
 </div>
 <div class="download-right">
 <div class="download-title">
+<<<<<<< HEAD
 <p>iOS SDK下载</p>
+=======
+<p  id="release-title">iOS SDK下载</p>
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 </div>
 <div class="download-info">
 <p>请参考如下文档来集成SDK：</p>
@@ -67,7 +81,11 @@
 </div>
 <div class="download-right">
 <div class="download-title">
+<<<<<<< HEAD
 <p>Windows Phone SDK下载</p>
+=======
+<p id="release-title">Windows Phone SDK下载</p>
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 </div>
 <div class="download-info">
 <p>请参考如下文档来集成SDK：</p>
@@ -198,8 +216,13 @@
 </div>
 <div class="download-info">
 <ul class="download-info-ul">
+<<<<<<< HEAD
 <li>版本号：v3.1.0</li>
 <li>更新时间：2016-04-05</li>
+=======
+<li>版本号：v3.2.2</li>
+<li>更新时间：2016-09-23</li>
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 <li>更新内容：<a href="https://github.com/jpush/jpush-api-csharp-client/releases">Change Log</a></li>
 <div style=" clear:both; visibility:hidden;">
 </ul>
@@ -210,7 +233,11 @@
 </ul>
 </div>
 <div class="download-icon">
+<<<<<<< HEAD
 <a href="https://www.jiguang.cn/downloads/resource/1467707440043">下载</a>
+=======
+<a href="https://sdkfiledl.jiguang.cn/jpush-api-csharp-client-3.2.2.zip ">下载</a>
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 </div>
 </div>
 <div class="hr">

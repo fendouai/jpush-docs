@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 # JMessage iOS SDK 集成指南
+=======
+# iOS SDK 集成指南
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 
 <style>
 img[alt=jmessage_ios] { width: 800px; }
 </style>
 
+<<<<<<< HEAD
 ### 文档说明
 
 本文是极光IM iOS SDK 的集成指南文档。
@@ -27,6 +32,14 @@ img[alt=jmessage_ios] { width: 800px; }
 + 消息类型：文本、语音、图片；
 + 用户未在线时保存离线消息；
 + 基于 JPush 原有的大容量稳定的长连接、大容量消息并发能力；
+=======
+### 集成说明
+
+极光 IM 是一个端到端的即时通讯云服务，使得多个集成 SDK 的客户端之间可以互发即时消息，让开发者可以轻松地在 App 里集成 IM 的功能，为 App 加上社交功能，从而有效地提升 App 活跃度。
+
+JMessage SDK 包含 JPush SDK 的全部功能，App 集成了 IM SDK 就不应再集成 JPush SDK（只提供 Push 功能的 SDK）。
+
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 
 #### 主要特点
 
@@ -36,7 +49,11 @@ img[alt=jmessage_ios] { width: 800px; }
 
 #### 系统要求与开发环境
 
+<<<<<<< HEAD
 JMessage iOS SDK 支持 iOS 7 以上系统版本。
+=======
++ JMessage iOS SDK 支持 iOS 7 以上系统版本。
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 
 #### jmessage-sdk-ios.zip 集成压缩包
 
@@ -45,6 +62,7 @@ JMessage iOS SDK 支持 iOS 7 以上系统版本。
 * demo文件夹：示例。
 
 
+<<<<<<< HEAD
 #### 包括 JPush SDK
 
 如果你的 App 之前未集成过 JPush，请忽略本节，参考下节的 “SDK集成步骤”。
@@ -54,16 +72,33 @@ JMessage SDK 包含 JPush SDK 的全部功能。
 如果您原来代码里集成过 JPush iOS SDK，则可大部分保持不变。变更部分如下：
 
 + 集成到项目工程里的 JPush SDK 的文件删除掉，包括头文件：APService.h，库文件 libPushSDK.a。JMessage.framework 里已经包含 Push 部分，不删除掉会冲突。
+=======
+### SDK集成步骤
+
+如果你的 App 之前未集成过 JPush，请忽略此段，直接参考下节的集成步骤。
+
+如果您原来集成过 JPush iOS SDK，则可大部分保持不变。变更以下部分：
+
++ 把之前项目工程里的 JPush SDK 文件删掉，包括头文件：APService.h，库文件  libPushSDK.a 。JMessage.framework 里已经包含 Push 部分，不删除掉会冲突。
+
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 + 配置文件 PushConfig.plist 文件删除掉。不再使用配置文件，而是用代码调用提供基本参数。
 + 原来调用 APService 里 setupWithOption 做初始化，现在要换成 JMessage 里相应的方法。
 
 JMessage 新增的依赖、配置、初始化方面，请继续参考下节。
 
+<<<<<<< HEAD
 ### SDK集成步骤
 
 #### 1、在极光 Web控制台上创建应用
 
 * 登录[极光Web控制台](https://www.jpush.cn/common/apps)，创建应用，上传 APNs 证书。如果对 Apple APNs 证书不太了解，请参考[iOS 证书设置指南](../client/ios_tutorials/#ios_1)。
+=======
+#### 1、在极光 Web控制台上创建应用
+
+* 登录[极光Web控制台](https://www.jiguang.cn/accounts/login/form)，创建应用，上传 APNs 证书。
+如果对 Apple APNs 证书不太了解，请参考[iOS 证书设置指南](https://docs.jiguang.cn/jpush/client/iOS/ios_cer_guide/)。
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 
 ![jmessage_ios][0]
 
@@ -90,6 +125,10 @@ JMessage 新增的依赖、配置、初始化方面，请继续参考下节。
 * MobileCoreServices.framework
 * libz.dylib
 * libsqlite3.0.dylib
+<<<<<<< HEAD
+=======
+* libresolv.tbd (JMessage 2.2.1及以上版本需要)
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 
 #### 4、Build Settings
 
@@ -245,4 +284,8 @@ extern NSString *const JMSGNotification_GroupChange;             // 群组更新
 [2]: ./image/Screenshot_13-4-15_3_31.png
 [3]: ../../client_sdks/ios_api
 [4]: mailto:support@jpush.cn
+<<<<<<< HEAD
 [5]: http://www.jpush.cn/qa/
+=======
+[5]: https://community.jiguang.cn/
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2

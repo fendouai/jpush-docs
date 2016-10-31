@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 # MessageList 消息列表
+=======
+# IM REST Report
+
+## MessageList 消息历史
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 
 目前只保存最近60天消息，这类 API 地址统一为（注意与 Push API 不同）：**https://report.im.jpush.cn/v1**
 
@@ -10,7 +16,11 @@ Authorization: Basic base64_auth_string
 即，对 appKey 加上冒号，加上 masterSecret 拼装起来的字符串，再做 base64 转换。
 
 
+<<<<<<< HEAD
 ##GetMessage 获取消息
+=======
+## GetMessage 获取消息
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
 
 <div style="font-size:13px;background: #E0EFFE;border: 1px solid #ACBFD7;border-radius: 3px;padding: 8px 16px;">
 <p>温馨提示：</p>
@@ -146,3 +156,8 @@ Content-Type: application/json; charset=utf-8
  ] 
 }
 ```
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> e8ebb19e891ee41f300ee8854a1e907b07df85b2
